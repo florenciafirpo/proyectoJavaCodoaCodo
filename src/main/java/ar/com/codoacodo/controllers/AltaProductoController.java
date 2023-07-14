@@ -19,10 +19,10 @@ public class AltaProductoController extends HttpServlet{
 
         //asumimos que aca llegan lo parametros desde el formulario
         String titulo = req.getParameter("nombre");
-String autor = req.getParameter("autor");
-double precio = Double.parseDouble(req.getParameter("precio"));
-String imagen = "http://bla.com.ar/algo.jpg";
-String codigo = req.getParameter("codigo");
+        double precio = Double.parseDouble(req.getParameter("precio"));
+        String imagen = "http://bla.com.ar/algo.jpg";
+        String codigo = req.getParameter("codigo");
+        String autor = req.getParameter("autor");
 
         //ahora nace el producto EN JVM, pero no existe en la DB!
         //NO INSERT INTO....

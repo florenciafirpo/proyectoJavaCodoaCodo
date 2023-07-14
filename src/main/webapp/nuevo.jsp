@@ -35,7 +35,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" 
-                                class="form-label">Im&aacute;gen
+                                class="form-label">Imágen
                             </label>
                             <input name="imagen" 
                                 type="file" 
@@ -44,7 +44,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" 
-                                class="form-label">C&oacute;digo
+                                class="form-label">Código
                             </label>
                             <input name="codigo" 
                                 type="text" 

@@ -20,23 +20,23 @@ public class MysqlDaoImpl implements DAO{
     
     public void create(Producto producto) throws Exception{
         
-        //vamos a ver la clase que viene JDBC
-        Connection connection = AdministradorDeConexiones.getConnection();//f5
+         // Obtener la conexión de la base de datos
+    Connection connection = AdministradorDeConexiones.getConnection();
         
-        //ahora si armo el sql para hacer un INSERT                                      1  2  3  4  5
-        String sql = "INSERT INTO productos (titulo, fecha, autor,codigo,imagen, precio) VALUES (?, ?, ?, ?, ?, ?)";
-        PreparedStatement pst = connection.prepareStatement(sql);
+    // Armar la sentencia SQL para hacer un INSERT
+    String sql = "INSERT INTO productos (id, titulo, precio, imagen, fecha, codigo, autor) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    PreparedStatement pst = connection.prepareStatement(sql);
 
-        //ahora seteo los valores 
-        pst.setString(1, producto.getTitulo());
-        pst.setDate(2, dateFrom(producto.getFecha()));        
-        pst.setString(3, producto.getAutor());
-        pst.setString(4, producto.getCodigo());
-        pst.setString(5, producto.getImagen());
-        pst.setDouble(6, producto.getPrecio());
+    // Establecer los valores
+    pst.setLong(1, producto.getId());
+    pst.setString(2, producto.getTitulo());
+    pst.setDouble(3, producto.getPrecio());
+    pst.setString(4, producto.getImagen());
+    pst.setDate(5, dateFrom(producto.getFecha()));  
+    pst.setString(6, producto.getCodigo());      
+    pst.setString(7, producto.getAutor());
 
-        pst.executeUpdate();
-        //ResultSet
+    pst.executeUpdate();
     }
 
     @Override
